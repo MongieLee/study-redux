@@ -2,6 +2,7 @@ import './App.css'
 import {connect} from "react-redux";
 import * as countActions from "./store/actions/count.actions";
 import {bindActionCreators} from "redux";
+import Platform from "./components/platform.jsx";
 
 function App(props) {
   console.log(props);
@@ -11,12 +12,14 @@ function App(props) {
       <hr/>
       <button onClick={() => props.increment(2)}>increment</button>
       <button onClick={() => props.decrement(2)}>decrement</button>
+      <hr/>
+      <Platform/>
     </div>
   )
 }
 
 const mapStateToProps = (state) => {
-  return {count: state.count}
+  return {count: state.counter.count}
 }
 
 // const mapDispatchToProps = (dispatch) => {
