@@ -10,6 +10,11 @@ const Platform = (props) => {
       props.updatePlatform("ios")
     }}>update Platform
     </button>
+
+    <button onClick={() => {
+      props.updatePlatform_async("ios async")
+    }}>update Platform async
+    </button>
   </div>);
 }
 
