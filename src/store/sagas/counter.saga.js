@@ -4,9 +4,10 @@ import {INCREMENT_SAGA} from "../const/count.const.js";
 // put等于dispatch
 // takeEvery用于接收action
 
-function* increment_saga_fn() {
+function* increment_saga_fn(action) {
+  console.log(action);
   yield delay(1000);
-  yield put(increment());
+  yield put(increment(action.payload));
 }
 
 export default function* counterSaga() {

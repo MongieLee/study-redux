@@ -12,7 +12,7 @@ function App(props) {
       <hr/>
       <button onClick={() => props.increment(2)}>increment</button>
       <button onClick={() => props.decrement(2)}>decrement</button>
-      <button onClick={() => props.increment_saga(2)}>saga</button>
+      <button onClick={() => props.increment_saga(20)}>saga</button>
       <hr/>
       <Platform/>
     </div>
