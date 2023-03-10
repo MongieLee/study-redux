@@ -5,6 +5,7 @@ import thunkMiddleware from "../middleware/thunkMiddleware.js";
 import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 import counterSaga from "./sagas/counter.saga.js";
+import rootSaga from "./sagas/rootSaga.js";
 // const store = legacy_createStore(reducers, applyMiddleware(logMiddleware, thunkMiddleware));
 const sagaMiddle = createSagaMiddleware();
 const store = legacy_createStore(reducers, applyMiddleware(logMiddleware, sagaMiddle));
@@ -13,5 +14,6 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-sagaMiddle.run(counterSaga)
+// sagaMiddle.run(counterSaga)
+sagaMiddle.run(rootSaga);
 export default store;
